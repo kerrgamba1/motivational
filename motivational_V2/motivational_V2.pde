@@ -1,5 +1,5 @@
 // declaration of the frame width and height, (NOTE IF CHANGED THE LOCATION OF THE TEXT AND CLOUD WILL HAVE TO BE CHANGED BY HAND)
-int frameWidth = 600, frameHeight = 324;
+int frameWidth = 1200, frameHeight = 628;
 
 // declaration of global variables
 Table table;
@@ -11,18 +11,18 @@ int i = 1;
 
 // setup function to run before the draw function begins, initiating the global variables
 void setup() {
-  font = createFont("Helvetica", 22);  // change font here. Get name from Tools > Create Font
+  font = createFont("Helvetica", 48);  // change font here. Get name from Tools > Create Font
 
   table = loadTable("input.csv", "header");
 
   frame = createGraphics(frameWidth, frameHeight, JAVA2D);
   frame.smooth(8);
-  
+
   // specifies the color, size, and font of the text to be drawn in the frame
   frame.beginDraw();
   frame.fill(c);
   frame.textFont(font);
-  frame.textSize(22);
+  frame.textSize(48);
   frame.textAlign(CENTER, CENTER);
   frame.endDraw();
 
@@ -33,18 +33,22 @@ void setup() {
 void draw() {
   noLoop();
   println("loading...");
-  
+
   // for each row in the table, grab the information and display it on the sceen as specified
   for (TableRow row : table.rows()) {
-    String cloudText = row.getString("cloudText");
     String IMGfilename = row.getString("imgFileName");
+    if(IMGfilename.length() == 0) {
+      break;
+    }
+    
+    String cloudText = row.getString("cloudText");
     String finalFileName = row.getString("finalFileName");
-    PImage background = loadImage("inputImages/" + IMGfilename);
-
+    PImage background = loadImage("inputImages/" + IMGfilename); //<>//
+    
     frame.beginDraw();
     frame.image(background, 0, 0, frameWidth, frameHeight);
-    frame.image(cloud, 0, 180, frameWidth, 153); //544
-    frame.text(cloudText, 50, 215, 500, 103);
+    frame.image(cloud, 0, 321, frameWidth, 307); //544
+    frame.text(cloudText, 100, 371, 1000, 207);
     frame.endDraw();
     frame.save("imageOutputs/" + finalFileName);
 
@@ -52,7 +56,7 @@ void draw() {
     i++;
   }
   println("done");
-  
+
   // when complete exit the program
   exit();
 }
