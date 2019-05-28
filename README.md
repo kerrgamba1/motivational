@@ -8,7 +8,7 @@ This code runs on a JAVA coding enviornment called Processing, this can be downl
 Click the large green button above to download the repository to your computer and open the file called "motivational.pde" with Processing.
 
 <h1>Step 3: Input Information</h1>
-Open the file "input.csv". In the file input the motivational text, motivational image file name (ex: motivationalImage.jpg), and the name of the final file (usually the same as the name of the motivational image. Be sure to delete all previous information and make sure to delete any empty rows.
+Open the file "input.csv". In the file input the motivational text, motivational image file name (ex: motivationalImage.jpg), and the name of the final file (usually the same as the name of the motivational image. Be sure to delete all previous information.
 <br>
 <br>
 <b>NOTE:</b> when saving the inputs file be sure that it exports to a csv file OF THE SAME NAME. You must replace the old input.csv file with the new one you have updated.
