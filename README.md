@@ -10,6 +10,7 @@ Click the large green button above to download the repository to your computer a
 <h1>Step 3: Input Information</h1>
 Open the file "input.csv". In the file input the motivational text, motivational image file name (ex: motivationalImage.jpg), and the name of the final file (usually the same as the name of the motivational image. Be sure to delete all previous information and make sure to delete any empty rows.
 <br>
+<br>
 <b>NOTE:</b> when saving the inputs file be sure that it exports to a csv file OF THE SAME NAME. You must replace the old input.csv file with the new one you have updated.
 
 <h1>Step 4: Input Images</h1>
