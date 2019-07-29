@@ -5,27 +5,28 @@ int frameWidth = 1200, frameHeight = 628;
 Table table;
 PGraphics frame;
 PImage cloud;
-PFont font;
-color c = color(0);
-int i = 1;
 
 // setup function to run before the draw function begins, initiating the global variables
 void setup() {
-  font = createFont("Helvetica", 48);  // change font here. Get name from Tools > Create Font
-
+  // Declares the table to recieve the data from
   table = loadTable("input.csv", "header");
-
+  
+  // Declare the font that the text in the images will be
+  PFont font = createFont("Helvetica", 48);  // change font here. Get name from Tools > Create Font
+  
+  // creates a PGraphic frame to use as a canvas for the image
   frame = createGraphics(frameWidth, frameHeight, JAVA2D);
   frame.smooth(8);
 
   // specifies the color, size, and font of the text to be drawn in the frame
   frame.beginDraw();
-  frame.fill(c);
+  frame.fill(color(0));  // Sets the color of the text (color(0) = black)
   frame.textFont(font);
   frame.textSize(48);
   frame.textAlign(CENTER, CENTER);
   frame.endDraw();
-
+  
+  // Loads the cload image to be used in the motivator
   cloud = loadImage("assets/new-cloud.png");
 }
 
@@ -33,7 +34,8 @@ void setup() {
 void draw() {
   noLoop();
   println("loading...");
-
+  
+  int i = 1;
   // for each row in the table, grab the information and display it on the sceen as specified
   for (TableRow row : table.rows()) {
     String IMGfilename = row.getString("imgFileName");
@@ -47,7 +49,7 @@ void draw() {
     
     frame.beginDraw();
     frame.image(background, 0, 0, frameWidth, frameHeight);
-    frame.image(cloud, 0, 321, frameWidth, 307); //544
+    frame.image(cloud, 0, 321, frameWidth, 307);
     frame.text(cloudText, 100, 371, 1000, 207);
     frame.endDraw();
     frame.save("imageOutputs/" + finalFileName);
