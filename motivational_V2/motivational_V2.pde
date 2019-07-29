@@ -27,7 +27,7 @@ void setup() {
   frame.endDraw();
   
   // Loads the cload image to be used in the motivator
-  cloud = loadImage("assets/new-cloud.png");
+  cloud = loadImage("data/new-cloud.png");
 }
 
 // draw function that will run after the setup function
@@ -52,7 +52,7 @@ void draw() {
     frame.image(cloud, 0, 321, frameWidth, 307);
     frame.text(cloudText, 100, 371, 1000, 207);
     frame.endDraw();
-    frame.save("imageOutputs/" + finalFileName);
+    frame.save("outputImages/" + finalFileName);
 
     println("image " + i + " done");
     i++;

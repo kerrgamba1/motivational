@@ -17,4 +17,4 @@ Open the file "input.csv". In the file input the motivational text, motivational
 Place all the motivational images in the folder titled "inputImages". It would probably be best to delete any old images in this folder but it is not required. The images should be 1200 x 628 pixels; if they are not, the image may look distorted.
 
 <h1>Step 5: Run The Program</h1>
-In the motivational.pde file, click the run button at the top of the page. When the consol states "done" then all the final images can be found in the folder titled "imageOutputs".
+In the motivational.pde file, click the run button at the top of the page. When the consol states "done" then all the final images can be found in the folder titled "outputImages".
